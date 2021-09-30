@@ -16,5 +16,12 @@ width: 100%;
         background: none;
         border: none;
     }
+    
+    
     ` 
-   
+    export const ContainerCard= styled.div`
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+    `
