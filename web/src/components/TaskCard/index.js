@@ -1,17 +1,24 @@
-import React from "react";
+import { format } from "date-fns";
+import React,{useMemo} from "react";
+
 import * as Styled from './styles';
  
+import arrayIcons from '../../utils/icons'
 
 function TaskCard(props){
-return(
+
+    const date =useMemo(()=>format(new Date(props.when),'dd/MM/yyyy'))
+    const hour =useMemo(()=>format(new Date(props.when),'HH/mm'))
+
+    return(
     <Styled.Container>
         <Styled.TopCard>
-            <img src={props.img} alt="tarefa"></img>
+            <img src={arrayIcons[props.type]} alt="tarefa"></img>
             <h3>{props.title}</h3>
        </Styled.TopCard>
        <Styled.bottomCard>
-           <strong> 16/09/2021 </strong>
-           <span> 10:00 </span>
+           <strong> {date} </strong>
+           <span> {hour} </span>
        </Styled.bottomCard>
 </Styled.Container>
 )

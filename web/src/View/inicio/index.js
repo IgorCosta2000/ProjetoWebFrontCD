@@ -4,14 +4,7 @@ import api from '../../services/api';
 
 /*   IMAGENS*/ 
 import Imagem from '../../Imgs/filter2.png';
-import futebol from '../../Imgs/futebol.jpg';
-import viagem from '../../Imgs/viagem.png';
-import lanche from '../../Imgs/lanche.jpg'
-import prova from '../../Imgs/prova.jpg'
-import cinema from '../../Imgs/cinema.png'
-import academia from '../../Imgs/academia.jpg'
-import trabalho from '../../Imgs/trabalho.png'
-import compra from '../../Imgs/compra.jpg'
+
 
 /* COMPONENTES*/
 import Header from '../../components/header';
@@ -71,9 +64,11 @@ loadtasks();
           
           </Styled.ContainerFilter>
           <Styled.ContainerCard>
-            {tasks.map(t=>(
-              <TaskCard />
-            ))}
+            {tasks.map(
+              t=>(
+              <TaskCard type={t.type} title={t.title} when={t.when}/>
+            ))
+            }
           </Styled.ContainerCard>
       <Footer />
     </Styled.Container>
