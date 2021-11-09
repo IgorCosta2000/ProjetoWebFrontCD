@@ -22,7 +22,7 @@ export const Container = styled.div`
             text-decoration: none;
             margin: 0 10px;
         }
-    .divisor::after{
+    .barra::after{
         content: "|";
         margin: 0 10px;
         color: #FFF

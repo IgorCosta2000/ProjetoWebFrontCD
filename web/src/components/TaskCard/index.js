@@ -8,7 +8,7 @@ import arrayIcons from '../../utils/icons'
 function TaskCard(props){
 
     const date =useMemo(()=>format(new Date(props.when),'dd/MM/yyyy'))
-    const hour =useMemo(()=>format(new Date(props.when),'HH/mm'))
+    const hour =useMemo(()=>format(new Date(props.when),'HH:mm'))
 
     return(
     <Styled.Container>
