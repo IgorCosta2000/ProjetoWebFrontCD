@@ -35,7 +35,7 @@ await api.get(`/task//filter/${filterActived}/11:11:11:11:11:11`)
 
 useEffect(()=>{
 loadtasks();
-},[filterActived])
+}, [filterActived])
 
   return (
  <Styled.Container>
@@ -76,16 +76,3 @@ loadtasks();
 }
 
 export default Home;
-/*
- <TaskCard img={futebol} title="Futebol"/>
-            <TaskCard img={viagem} title="Viagem"/>
-            <TaskCard img={prova} title="Prova"/>
-            <TaskCard img={academia} title="academia"/>
-            <TaskCard img={lanche} title="Lanche"/>
-            <TaskCard img={compra} title="Compra"/>
-            <TaskCard img={trabalho} title="Trabalho"/>
-            <TaskCard img={cinema} title="Cinema"/>
-
-
-
-*/

@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const Form = styled.div`
         width: 50%;
+        
        
 `
 
@@ -19,10 +20,11 @@ export const Icons = styled.div`
         
 
         img{
-           widht: 50px;
+           width: 50px;
            heigth: 50px;
            cursor:pointer;
            margin: 10px;
+           
         }
          
         button{
