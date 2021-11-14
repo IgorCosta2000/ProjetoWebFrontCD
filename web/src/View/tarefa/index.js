@@ -36,7 +36,9 @@ function Task() {
                 </button>            
             ))
         }
+     
        </Styled.Icons>
+
       <Styled.Input>
           <input type="text" placeholder="Título"></input>
       </Styled.Input>
@@ -52,10 +54,21 @@ function Task() {
       <Styled.Input>
           <input type="time" ></input>
       </Styled.Input>
+       
+      <Styled.Option>
+          <div>
+              <input type="checkbox"></input>
+              <span>CONCLUIDO</span>
+          </div>
+          <button type="button">EXCLUIR</button>
+      </Styled.Option>
 
+      <Styled.Save>
+          <button type="button">SALVAR</button>
+      </Styled.Save>
       </Styled.Form>
 
-
+      
       <Footer />
     </Styled.Container>
   )

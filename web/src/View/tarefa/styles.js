@@ -64,6 +64,79 @@ export const Icons = styled.div`
             padding 15px;
             border: 1px solid #FFD700
         }
-    
-
         `
+  export  const Option= styled.div`
+          display: flex;
+          justify-content: space-between;
+
+          button{
+              font-weight: bold;
+              color: #FFD700;
+              border: none;
+              background: none;
+              cursor: pointer;
+
+             
+              &:hover{
+                  opacity: 0.7;
+              }
+          }
+          
+          div{
+           display: flex;
+           align-items: center;
+           color: #FFD700;   
+          }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  `
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        export const Save = styled.div`
+            width: 100%;
+            margin-top: 20px;
+            
+          
+        button{
+            width: 100%;
+            background: #FFD700;
+            border: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        `
+        
+        
+        
+        
+        
