@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import * as Styled from './styles';
 import api from '../../services/api';
 
+import { Link } from 'react-router-dom';
+
 /*   IMAGENS*/ 
 import Imagem from '../../Imgs/filter2.png';
 
@@ -20,14 +22,14 @@ import TaskCard from '../../components/TaskCard';
 function Home() {
 
   //variavel e função responsavel por atualizar o valor do filtro
-  const [filterActived, functionFilter ]= useState('all');
+  const [filterActive, functionFilter ]= useState('all');
   
   //a setTasks vai ser a função responsavel por armazenar na variavel tasks as tarefas do banco de dados
   const [tasks,setTasks ]= useState([]);
 
   //função responsavel por fazer as requisiçoes para o backend
   async function loadtasks(){
-await api.get(`/task//filter/${filterActived}/11:11:11:11:11:11`)
+await api.get(`/task//filter/${filterActive}/11:11:11:11:11:11`)
 .then(response =>{
   setTasks(response.data)
 })
@@ -35,7 +37,7 @@ await api.get(`/task//filter/${filterActived}/11:11:11:11:11:11`)
 
 useEffect(()=>{
 loadtasks();
-}, [filterActived])
+}, [filterActive])
 
   return (
  <Styled.Container>
@@ -43,30 +45,35 @@ loadtasks();
         <Styled.ContainerFilter>
           
           <button type='button' onClick={()=>functionFilter('all')}>
-            <Filter title="Todos"img={Imagem} actived={filterActived == 'all'}/>
+            <Filter title="Todos"img={Imagem} actived={filterActive == 'all'}/>
           </button>
 
           <button type='button' onClick={()=>functionFilter('today')}>
-            <Filter title="Hoje"img={Imagem} actived={filterActived == 'today'}/>
+            <Filter title="Hoje"img={Imagem} actived={filterActive == 'today'}/>
           </button>
 
           <button type='button' onClick={()=>functionFilter('week')}>
-            <Filter title="Semana"img={Imagem}actived={filterActived == 'week'}/>
+            <Filter title="Semana"img={Imagem}actived={filterActive == 'week'}/>
           </button>
         
           <button type='button' onClick={()=>functionFilter('month')}>
-            <Filter title="Mês"img={Imagem}actived={filterActived == 'month'}/>
+            <Filter title="Mês"img={Imagem}actived={filterActive == 'month'}/>
           </button>
           
           <button type='button' onClick={()=>functionFilter('year')}>
-            <Filter title="ano"img={Imagem}actived={filterActived == 'year'}/>
+            <Filter title="ano"img={Imagem}actived={filterActive == 'year'}/>
           </button>
           
           </Styled.ContainerFilter>
           <Styled.ContainerCard>
-            {tasks.map(
-              t=>(
+             
+            {
+            tasks.map(
+              t=> (
+              <Link to={`/task/${t._id}`}>
               <TaskCard type={t.type} title={t.title} when={t.when}/>
+              </Link>
+
             ))
             }
           </Styled.ContainerCard>
