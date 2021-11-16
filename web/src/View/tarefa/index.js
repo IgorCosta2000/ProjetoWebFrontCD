@@ -74,9 +74,18 @@ function Task() {
         loadTask()
     }, [])
 
+
+    async function deleteTask(){
+        const res= window.confirm("gostaria de apagar esta tarefa?")
+        if(res == true){
+            await api.delete(`/task/${id}`)
+        .then(setNavigate(true))
+        }
+    }
+
   return (
     <Styled.Container>
-     {navigate &&<Navigate to="/"/>}  
+     {navigate &&<Navigate to="/"></Navigate>}  
       <Header /> 
       <Styled.Form>
        <Styled.Icons>
@@ -112,7 +121,7 @@ function Task() {
               <input type="checkbox"check={done} onChange={e =>setDone(e.target.value)}></input>
               <span>CONCLUIDO</span>
           </div>
-          <button type="button">EXCLUIR</button>
+          {id && <button type="button"onClick={deleteTask}>EXCLUIR</button>}
       </Styled.Option>
 
       <Styled.Save>
