@@ -4,9 +4,9 @@ export const Container = styled.div`
 
     width:100%;
     height:70px;
-    background : #000000;
+    background : #FF0000;
 
-    border-bottom: 6px solid #FFD700;`
+    border-bottom: 6px solid  #000000;`
     
 
     export const Menu = styled.div`
